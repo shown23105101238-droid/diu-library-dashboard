@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: 'Inter', sans-serif; 
+}
+
+body { 
+  background-color: #f4f6f9; 
+}
+
+/* Premium Navbar Layout with Logo */
+nav {
+  background: #002060; /* Premium deep blue */
+  padding: 15px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Logo ar text er space */
+}
+
+.nav-logo {
+  height: 40px; /* Logo height set */
+  width: auto;
+  border-radius: 4px; /* Optional slight rounding */
+}
+
+.logo-text {
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px; 
+}
+
+.nav-item {
+  color: #e0e6ed;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+.nav-item:hover { color: #ffc107; /* Daffodil gold on hover */ }
+
+/* Feedback Link Style */
+.btn-feedback {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.btn-feedback:hover { background: white; color: #002060; }
+
+/* Admin Button Layout (Exactly like Daffodil theme) */
+.btn-admin {
+  background: #ffc107; 
+  color: #002060;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 12px; /* Smooth corners */
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.btn-admin:hover { background: #e0a800; transform: translateY(-1px); }
+
+/* Context Hero Section */
+.hero { text-align: center; padding: 120px 20px; background: linear-gradient(135deg, #002060, #0044cc); color: white; }
+.hero h2 { font-size: 36px; margin-bottom: 10px; }
+.hero p { font-size: 18px; color: rgba(255,255,255,0.8); }
+
+/* Modal Toggling Mechanics (Pure CSS `:target`) */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex; justify-content: center; align-items: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2000;
+}
+.modal-overlay:target { opacity: 1; pointer-events: auto; }
+
+.modal-box {
+  background: white; padding: 35px; border-radius: 16px;
+  width: 100%; max-width: 420px; position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transform: translateY(-30px); transition: transform 0.3s ease;
+}
+.modal-overlay:target .modal-box { transform: translateY(0); }
+
+.close-btn { position: absolute; top: 15px; right: 20px; text-decoration: none; font-size: 28px; color: #aaa; font-weight: bold; }
+.close-btn:hover { color: #000; }
+
+/* Form Fields Styling Inside Popups */
+.modal-box h3 { margin-bottom: 20px; color: #002060; font-size: 22px; font-weight: 700; border-bottom: 2px solid #f4f6f9; padding-bottom: 10px;}
+.input-group { margin-bottom: 18px; text-align: left;}
+.input-group label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 600; color: #333; }
+.input-group input, .input-group textarea {
+  width: 100%; padding: 12px; border: 1px solid #cdd5e0; border-radius: 8px; font-size: 14px; outline: none; background: #f8fafc; transition: all 0.2s;
+}
+.input-group input:focus, .input-group textarea:focus { border-color: #0044cc; background: #fff; box-shadow: 0 0 0 3px rgba(0, 68, 204, 0.1); }
+
+/* Submit Action Button styling Inside Popups */
+.submit-btn { color: white; border: none; width: 100%; padding: 12px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 600; transition: background 0.2s; }
+.admin-submit { background: #002060; }
+.admin-submit:hover { background: #001030; }
+
+.feedback-submit { background: #28a745; }
+.feedback-submit:hover { background: #218838; }
